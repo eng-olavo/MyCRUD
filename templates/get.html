@@ -1,0 +1,56 @@
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Get</title>
+    {% bootstrap_css %}
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'index' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'getView' %}">Get</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'postView' %}">Post</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'putView' %}">Put</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'deleteView' %}">Delete</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>NOME</th>
+                    <th>E-MAIL</th>
+                    <th>TELEFONE</th>
+                    <th>ANIVERSÁRIO</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for contato in contatos%}
+                <tr>
+                    <td>{{ nome }}</td>
+                    <td>{{ email }}</td>
+                    <td>{{ telefone }}</td>
+                    <td>{{ aniversario }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container-fluid" style="text-center;">
+        <h5 style="margin-top:300px;">Dev by kWp</h5>
+    </div>
+{% bootstrap_javascript jquery='full' %}
+</body>
+</html>
